@@ -9,11 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\PostView;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<PostView>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\PostView>
->>>>>>> origin/develop
  */
 class PostViewFactory extends Factory
 {

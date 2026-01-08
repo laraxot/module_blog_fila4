@@ -2,15 +2,7 @@
 $queries = request()->query();
 $query = request()->query('order');
 $orders = [
-<<<<<<< HEAD
     'recent' => (string) __('predict::play_money_markets.recent'),
-=======
-<<<<<<< HEAD
-    'recent' => (string) __('predict::play_money_markets.recent'),
-=======
-    'recent' => __('predict::play_money_markets.recent'),
->>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
     'coming_soon' => 'Coming Soon',
     'bets' => 'Number Of Bets',
     'volume' => 'Volume',
@@ -37,15 +29,7 @@ $orders = [
     <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')"
         type="button"
         class="flex items-center px-4 py-2 space-x-2 text-sm font-semibold rounded ring-1 ring-gray-300">
-<<<<<<< HEAD
         <span class="text-nowrap">{{ (string) __('predict::play_money_markets.order_by') }} {{ $orders[$query] ?? $orders['recent'] }}</span>
-=======
-<<<<<<< HEAD
-        <span class="text-nowrap">{{ (string) __('predict::play_money_markets.order_by') }} {{ $orders[$query] ?? $orders['recent'] }}</span>
-=======
-        <span class="text-nowrap">{{ __('predict::play_money_markets.order_by') }} {{ $orders[$query] ?? $orders['recent'] }}</span>
->>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
         <x-heroicon-o-chevron-down class="transition-transform duration-200 size-4"/>
     </button>
     <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)"

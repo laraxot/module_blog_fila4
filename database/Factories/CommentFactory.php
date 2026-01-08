@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Blog\Models\Comment;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<Comment>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Comment>
->>>>>>> origin/develop
  */
 class CommentFactory extends Factory
 {

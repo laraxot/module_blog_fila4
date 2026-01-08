@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Blog\Models\CategoryPost;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<CategoryPost>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\CategoryPost>
->>>>>>> origin/develop
  */
 class CategoryPostFactory extends Factory
 {
