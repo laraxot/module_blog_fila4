@@ -5,27 +5,23 @@ declare(strict_types=1);
 namespace Modules\Blog\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Blog\Models\Category;
+use Modules\Blog\Models\Banner;
 
 /**
 <<<<<<< HEAD
- * @extends Factory<Category>
+ * @extends Factory<Banner>
 =======
-<<<<<<< HEAD
- * @extends Factory<Category>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Banner>
 >>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
-class CategoryFactory extends Factory
+class BannerFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<Category>
+     * @var class-string<Banner>
      */
-    protected $model = Category::class;
+    protected $model = Banner::class;
 
     /**
      * Define the model's default state.
@@ -36,7 +32,7 @@ class CategoryFactory extends Factory
     {
         return [
             'title' => fake()->sentence,
-            'slug' => fake()->slug,
+            // 'slug' => $this->faker->slug,
         ];
     }
 }

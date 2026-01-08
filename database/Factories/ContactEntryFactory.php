@@ -5,27 +5,24 @@ declare(strict_types=1);
 namespace Modules\Blog\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Blog\Models\CategoryPost;
+use Modules\Blog\app\Models\ContactEntry;
 
 /**
+ * @phpstan-ignore-next-line
 <<<<<<< HEAD
- * @extends Factory<CategoryPost>
+ * @extends Factory<\Modules\Blog\app\Models\ContactEntry>
 =======
-<<<<<<< HEAD
- * @extends Factory<CategoryPost>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\CategoryPost>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\app\Models\ContactEntry>
 >>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
-class CategoryPostFactory extends Factory
+class ContactEntryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<CategoryPost>
+     * @var class-string<ContactEntry>
      */
-    protected $model = CategoryPost::class;
+    protected $model = ContactEntry::class;
 
     /**
      * Define the model's default state.

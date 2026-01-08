@@ -8,7 +8,15 @@ use Filament\Widgets\ChartWidget;
 
 class SampleChartWidget extends ChartWidget
 {
+<<<<<<< HEAD
     protected ?string $heading = 'Blog Posts';
+=======
+<<<<<<< HEAD
+    protected ?string $heading = 'Blog Posts';
+=======
+    protected static ?string $heading = 'Blog Posts';
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
 
     protected function getData(): array
     {

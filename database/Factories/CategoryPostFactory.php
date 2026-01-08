@@ -11,12 +11,8 @@ use Modules\Blog\Models\CategoryPost;
 <<<<<<< HEAD
  * @extends Factory<CategoryPost>
 =======
-<<<<<<< HEAD
- * @extends Factory<CategoryPost>
-=======
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\CategoryPost>
 >>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
 class CategoryPostFactory extends Factory
 {

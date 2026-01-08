@@ -5,27 +5,24 @@ declare(strict_types=1);
 namespace Modules\Blog\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Blog\Models\CategoryPost;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Models\Profile;
 
 /**
 <<<<<<< HEAD
- * @extends Factory<CategoryPost>
+ * @extends Factory<Profile>
 =======
-<<<<<<< HEAD
- * @extends Factory<CategoryPost>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\CategoryPost>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Profile>
 >>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
-class CategoryPostFactory extends Factory
+class ProfileFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<CategoryPost>
+     * @var class-string<Profile>
      */
-    protected $model = CategoryPost::class;
+    protected $model = Profile::class;
 
     /**
      * Define the model's default state.
@@ -35,6 +32,8 @@ class CategoryPostFactory extends Factory
     public function definition()
     {
         return [
+            'id' => fake()->randomNumber(5, false),
+            'user_id' => fake()->randomNumber(5, false),
         ];
     }
 }

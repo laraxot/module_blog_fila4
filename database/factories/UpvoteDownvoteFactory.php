@@ -9,7 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\UpvoteDownvote;
 
 /**
+<<<<<<< HEAD
  * @extends Factory<UpvoteDownvote>
+=======
+<<<<<<< HEAD
+ * @extends Factory<UpvoteDownvote>
+=======
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\UpvoteDownvote>
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
  */
 class UpvoteDownvoteFactory extends Factory
 {

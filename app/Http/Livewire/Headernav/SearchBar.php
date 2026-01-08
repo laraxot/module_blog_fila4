@@ -32,6 +32,14 @@ class SearchBar extends Component
             'results' => $results,
         ];
 
+<<<<<<< HEAD
         return view((string) $view, $view_params);
+=======
+<<<<<<< HEAD
+        return view((string) $view, $view_params);
+=======
+        return view($view, $view_params);
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
     }
 }

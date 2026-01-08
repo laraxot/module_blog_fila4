@@ -5,27 +5,24 @@ declare(strict_types=1);
 namespace Modules\Blog\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Blog\Models\Comment;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Models\UpvoteDownvote;
 
 /**
 <<<<<<< HEAD
- * @extends Factory<Comment>
+ * @extends Factory<UpvoteDownvote>
 =======
-<<<<<<< HEAD
- * @extends Factory<Comment>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Comment>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\UpvoteDownvote>
 >>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
-class CommentFactory extends Factory
+class UpvoteDownvoteFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<Comment>
+     * @var class-string<UpvoteDownvote>
      */
-    protected $model = Comment::class;
+    protected $model = UpvoteDownvote::class;
 
     /**
      * Define the model's default state.
@@ -35,10 +32,9 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'comment' => fake()->text,
+            'is_upvote' => fake()->boolean,
             'post_id' => fake()->randomNumber(5),
             'user_id' => fake()->randomNumber(5),
-            'parent_id' => fake()->randomNumber(5),
         ];
     }
 }
