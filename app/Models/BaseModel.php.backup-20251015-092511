@@ -4,14 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Models;
 
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+// ---------- traits
+// //use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Traits\Updater;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
- * Class BaseMorphPivot.
+ * Class BaseModel.
+ *
  */
-abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
+abstract class BaseModel extends \Modules\Xot\Models\XotBaseModel implements HasMedia
 {
+    use HasXotFactory;
+
+    // use Searchable;
+    // use Cachable;
+    use InteractsWithMedia;
     use SoftDeletes;
     use Updater;
 
@@ -36,30 +49,27 @@ abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
     /** @var string */
     protected $connection = 'blog';
 
-    /** @var list<string> */
-    protected $appends = [];
-
     /** @var string */
     protected $primaryKey = 'id';
 
     /** @var string */
     protected $keyType = 'string';
+    /** @var string */
 
     /** @var list<string> */
-    protected $fillable = [
-        'id',
-        'post_id', 'post_type',
-        'related_type',
-        'user_id',
-        'note',
+    protected $hidden = [
+        // 'password'
     ];
 
+    /** @return array<string, string> */
     protected function casts(): array
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
-            'created_at' => 'datetime', 'updated_at' => 'datetime', 'deleted_at' => 'datetime',
+            'published_at' => 'datetime',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
         ];
     }
 }

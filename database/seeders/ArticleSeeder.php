@@ -36,17 +36,17 @@ class ArticleSeeder extends Seeder
         }
 
         // Featured posts
-        for ($i = 0; $i < 2; $i++) {
+        for ($i = 0; $i < 2; ++$i) {
             $this->createArticle(['is_featured' => 1]);
         }
 
         // Published posts
-        for ($i = 0; $i < 26; $i++) {
+        for ($i = 0; $i < 26; ++$i) {
             $this->createArticle();
         }
 
         // Draft posts
-        for ($i = 0; $i < 2; $i++) {
+        for ($i = 0; $i < 2; ++$i) {
             $this->createArticle(['published_at' => null]);
         }
     }
@@ -58,6 +58,7 @@ class ArticleSeeder extends Seeder
     {
         $date = $this->date->subDay();
 
+        /* @phpstan-ignore-next-line argument.type */
         $category_key = array_rand($this->categories);
         Assert::keyExists($this->categories, $category_key, 'Category key must exist');
 
@@ -83,10 +84,10 @@ class ArticleSeeder extends Seeder
 
         $result = $factory->create($mergedData);
         if ($result instanceof \Illuminate\Database\Eloquent\Collection) {
-            /** @var \Illuminate\Database\Eloquent\Collection<int, Article> */
+            /* @var \Illuminate\Database\Eloquent\Collection<int, Article> */
             return $result;
         }
 
-        return new \Illuminate\Database\Eloquent\Collection;
+        return new \Illuminate\Database\Eloquent\Collection();
     }
 }
