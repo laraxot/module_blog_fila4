@@ -41,7 +41,11 @@ class AddCredits extends Action
                     Notification::make()->success()->title('Add credit successfully.');
                 }
             )
+<<<<<<< HEAD
             ->form([
+=======
+            ->schema([
+>>>>>>> 5cc3f45 (.)
                 TextInput::make('credits')
                     ->numeric()
                     ->required(),

@@ -102,6 +102,7 @@ Il modulo segue la struttura modulare standard di Laravel:
 - Study materials in [to_study.md](to_study.md)
 - Technical structure in [structure.md](structure.md)
 
+<<<<<<< HEAD
 ## Collegamenti
 - [Documentazione Principale](../../project_docs/README.md)
 - [Regole Globali](../../project_docs/REGOLE_GLOBALI.md)
@@ -123,3 +124,15 @@ Il modulo segue la struttura modulare standard di Laravel:
 
 ---
 *Principio DRY: Una funzionalità = Una documentazione. Collegamenti logici e struttura pulita.*
+=======
+## Collegamenti Bidirezionali
+- [Documentazione Principale](/laravel/docs/README.md)
+- [Modulo UI](/laravel/Modules/UI/docs/README.md)
+- [Modulo Cms](/laravel/Modules/Cms/docs/README.md)
+- [Modulo Comment](/laravel/Modules/Comment/docs/README.md)
+- [Modulo Lang](/laravel/Modules/Lang/docs/README.md)
+- [Modulo Xot](/laravel/Modules/Xot/docs/README.md)
+
+---
+*Principio DRY: Una funzionalità = Una documentazione. Collegamenti logici e struttura pulita.*
+>>>>>>> 5cc3f45 (.)
