@@ -67,9 +67,13 @@ class ShowArticleCommand extends Command
                 }], 'rating_morph.value');
 
             // Use getAttribute to safely access dynamic properties
-            $sum = (int) ($tmpArticle->getAttribute('value_sum') ?? 0);
-            $tot = (int) ($tmpArticle->getAttribute('value_tot') ?? 0);
-            $count = (int) ($tmpArticle->getAttribute('value_count') ?? 0);
+            $valueSum = $tmpArticle->getAttribute('value_sum');
+            $valueTot = $tmpArticle->getAttribute('value_tot');
+            $valueCount = $tmpArticle->getAttribute('value_count');
+
+            $sum = is_numeric($valueSum) ? (int) $valueSum : 0;
+            $tot = is_numeric($valueTot) ? (int) $valueTot : 0;
+            $count = is_numeric($valueCount) ? (int) $valueCount : 0;
             $avg = $tot > 0 ? round($sum * 100 / $tot, 2) : 0;
             $data = [$rating->id, $rating->title, $rating->pivot?->is_winner,  $count, $sum, $avg, $tot];
             $rows[] = $data;

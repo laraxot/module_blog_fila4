@@ -32,7 +32,7 @@ class ViewArticle extends ViewRecord
     public function infolist(Schema $schema): Schema
     {
         return $schema
-            ->schema([
+            ->components([
                 // ...
                 TextEntry::make('title'),
                 TextEntry::make('closed_at'),
