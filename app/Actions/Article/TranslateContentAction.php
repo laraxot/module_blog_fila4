@@ -28,6 +28,10 @@ class TranslateContentAction
     {
         // dddx([app(GetModelClassByModelTypeAction::class)->execute($model_class), Article::class]);
         // dddx(app($class));
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 336b9b7 (.)
         $model = app(GetModelByModelTypeAction::class)->execute($model_class, $article_id);
         Assert::isInstanceOf($model, $class, '['.__LINE__.']['.__FILE__.']');
         /** @var Article $model */
@@ -38,11 +42,26 @@ class TranslateContentAction
 
         if ($data['content_blocks'] ?? false) {
             /** @var array $model_content */
+<<<<<<< HEAD
+=======
+=======
+        Assert::isInstanceOf($model = app(GetModelByModelTypeAction::class)->execute($model_class, $article_id), app($class), '['.__LINE__.']['.__FILE__.']');
+        /** @var Article $model */
+
+        Assert::isArray($model_contents = $model->toArray(), '['.__LINE__.']['.__FILE__.']');
+
+        if ($data['content_blocks']) {
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
             $model_content = $model_contents['content_blocks'];
 
             // per ora do per scontato che la traduzione italiana esista
             foreach ($locales as $locale) {
                 if (! isset($model_content[$locale])) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 336b9b7 (.)
                     $model_content[$locale] = $model_content['it'] ?? '';
                 }
             }
@@ -51,25 +70,62 @@ class TranslateContentAction
 
         if ($data['sidebar_blocks'] ?? false) {
             /** @var array $model_content */
+<<<<<<< HEAD
+=======
+=======
+                    $model_content[$locale] = $model_content['it'];
+                }
+            }
+            $model->content_blocks = $model_content;
+        }
+
+        if ($data['sidebar_blocks']) {
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
             $model_content = $model_contents['sidebar_blocks'];
 
             // per ora do per scontato che la traduzione italiana esista
             foreach ($locales as $locale) {
                 if (! isset($model_content[$locale])) {
+<<<<<<< HEAD
                     $model_content[$locale] = $model_content['it'] ?? [];
+=======
+<<<<<<< HEAD
+                    $model_content[$locale] = $model_content['it'] ?? [];
+=======
+                    $model_content[$locale] = $model_content['it'];
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
                 }
             }
             $model->sidebar_blocks = $model_content;
         }
 
+<<<<<<< HEAD
         if ($data['footer_blocks'] ?? false) {
             /** @var array $model_content */
+=======
+<<<<<<< HEAD
+        if ($data['footer_blocks'] ?? false) {
+            /** @var array $model_content */
+=======
+        if ($data['footer_blocks']) {
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
             $model_content = $model_contents['footer_blocks'];
 
             // per ora do per scontato che la traduzione italiana esista
             foreach ($locales as $locale) {
                 if (! isset($model_content[$locale])) {
+<<<<<<< HEAD
                     $model_content[$locale] = $model_content['it'] ?? [];
+=======
+<<<<<<< HEAD
+                    $model_content[$locale] = $model_content['it'] ?? [];
+=======
+                    $model_content[$locale] = $model_content['it'];
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
                 }
             }
             $model->footer_blocks = $model_content;

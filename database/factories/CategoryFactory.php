@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Blog\Models\Category;
 
 /**
+<<<<<<< HEAD
  * @extends Factory<Category>
+=======
+<<<<<<< HEAD
+ * @extends Factory<Category>
+=======
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Category>
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
  */
 class CategoryFactory extends Factory
 {

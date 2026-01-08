@@ -9,7 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\Profile;
 
 /**
+<<<<<<< HEAD
  * @extends Factory<Profile>
+=======
+<<<<<<< HEAD
+ * @extends Factory<Profile>
+=======
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Profile>
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
  */
 class ProfileFactory extends Factory
 {

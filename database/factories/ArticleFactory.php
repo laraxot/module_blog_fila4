@@ -12,7 +12,15 @@ use function Safe\json_decode;
 use function Safe\preg_replace;
 
 /**
+<<<<<<< HEAD
  * @extends Factory<Article>
+=======
+<<<<<<< HEAD
+ * @extends Factory<Article>
+=======
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Article>
+>>>>>>> origin/develop
+>>>>>>> 336b9b7 (.)
  */
 class ArticleFactory extends Factory
 {
