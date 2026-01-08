@@ -13,6 +13,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Pages\ViewRecord;
 use Filament\Schemas\Schema;
+use Webmozart\Assert\Assert;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;
 use Modules\Blog\Actions\Article\TranslateContentAction;
@@ -57,7 +58,10 @@ class ViewArticle extends ViewRecord
                         ->native(false),
                 ])
                 ->action(function (array $data, $record): void {
-                    $record->update($data);
+                    Assert::notNull($record, 'Record cannot be null');
+                    if (is_object($record) && method_exists($record, 'update')) {
+                        $record->update($data);
+                    }
                 }),
             /*
             Actions\Action::make('translate')

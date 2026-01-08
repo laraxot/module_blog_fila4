@@ -4,29 +4,18 @@
             Place bet
         </div>
 
-        <x-filament-panels::form
                 wire:submit="save"
                 >
             Your bet {{ $rating_title }}
             {{ $this->form }}
 
-        {{-- <x-filament-panels::form.actions
-            :actions="$this->getFormActions()"
-        /> --}}
-
-
-        <x-filament::button
-            class="px-5 my-2 mt-4 w-full flex items-center justify-center py-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:bg-opacity-15"
-            wire:click="save"
+        <form
+            wire:submit="save"
             >
-            Please select an outcome
-        </x-filament::button>
-
-
-        </x-filament-panels::form>
-
-
-
+            <button
+                class="px-5 my-2 mt-4 w-full flex items-center justify-center py-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:bg-opacity-15"
+                wire:click="save"
+                >
 
 
 

@@ -84,6 +84,33 @@
 
 ---
 
+### Code Quality 🏆
+
+**PHPStan Level 10 Compliance**
+
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](docs/phpstan-compliance.md)  
+**Status:** ✅ 0 Errors (13 errori corretti il 10 Ottobre 2025)
+
+```bash
+# Verifica qualità codice
+./vendor/bin/phpstan analyse Modules/Blog
+```
+
+**Best Practices & Documentation:**
+- 📊 [PHPStan Compliance Status](docs/phpstan-compliance.md)
+- 🎓 [Best Practices PHPStan](docs/phpstan/best-practices.md)
+- 📝 [Correzioni 2025-10-10](docs/phpstan/correzioni-2025-10-10.md)
+- 🎯 [Pattern Comuni Progetto](../../../docs/phpstan/pattern-comuni.md)
+
+**Key Learnings:**
+- ✅ Return types specifici: `list<ArticleData>` invece di `array<string, mixed>`
+- ✅ Type-safe callbacks: sempre ritornare tipo corretto (es. `bool` per `filter()`)
+- ✅ Array associativi per Filament: chiavi stringa richieste
+- ✅ Null safety: usare `??` e `?->` per property dinamiche
+- ✅ MAI escludere test da PHPStan
+
+---
+
 ### Author 👨‍💻
 
 Developed and maintained by [Marco Sottana](https://github.com/marco76tv)  

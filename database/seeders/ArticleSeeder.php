@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Blog\Database\Seeders;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Modules\Blog\Models\Article;
@@ -29,6 +28,7 @@ class ArticleSeeder extends Seeder
 
         foreach ($this->categories as $category) {
             Assert::isArray($category);
+            Assert::string($category['name']);
             Category::create([
                 'title' => $category['name'],
                 'slug' => Str::slug($category['name']),
@@ -52,24 +52,41 @@ class ArticleSeeder extends Seeder
     }
 
     /**
-     * @return Collection <Article>
+     * @return \Illuminate\Database\Eloquent\Collection<int, Article>
      */
-    private function createArticle(array $data = []): Collection
+    private function createArticle(array $data = []): \Illuminate\Database\Eloquent\Collection
     {
         $date = $this->date->subDay();
 
         $category_key = array_rand($this->categories);
+        Assert::keyExists($this->categories, $category_key, 'Category key must exist');
+
+        $category = $this->categories[$category_key];
+        Assert::isArray($category, 'Category must be an array');
+        Assert::keyExists($category, 'image', 'Category must have image key');
 
         $defaults = [
             'created_at' => $date,
             'updated_at' => $date,
             'published_at' => $date,
             // 'category_id' => $category_key + 1,
-            'main_image_url' => $this->categories[$category_key]['image'],
+            'main_image_url' => $category['image'],
         ];
 
-        $data = array_merge($defaults, $data);
+        /** @var array<string, mixed> $mergedData */
+        $mergedData = array_merge($defaults, $data);
 
-        return Article::factory()->create($data);
+        /** @var \Illuminate\Database\Eloquent\Factories\Factory<Article> $factory */
+        $factory = Article::factory();
+        Assert::object($factory, 'Factory must be an object');
+        Assert::methodExists($factory, 'create', 'Factory must have create method');
+
+        $result = $factory->create($mergedData);
+        if ($result instanceof \Illuminate\Database\Eloquent\Collection) {
+            /** @var \Illuminate\Database\Eloquent\Collection<int, Article> */
+            return $result;
+        }
+
+        return new \Illuminate\Database\Eloquent\Collection;
     }
 }

@@ -21,6 +21,7 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Modules\Blog\Actions\Article\ImportArticlesFromByJsonTextAction;
 use Modules\Blog\Filament\Resources\ArticleResource;
 use Modules\Blog\Models\Category;
+use Modules\Xot\Actions\Cast\SafeArrayCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListArticles extends XotBaseListRecords
@@ -60,12 +61,18 @@ class ListArticles extends XotBaseListRecords
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getTableFilters(): array
     {
+        /** @var array<array<string>|string> $categoryOptions */
+        $categoryOptions = SafeArrayCastAction::cast(Category::getTreeCategoryOptions());
+
         return [
-            Filter::make('is_featured')->toggle(),
-            SelectFilter::make('Categoria')
-                ->options(Category::getTreeCategoryOptions())
+            'is_featured' => Filter::make('is_featured')->toggle(),
+            'category' => SelectFilter::make('Categoria')
+                ->options($categoryOptions)
                 ->attribute('category_id'),
         ];
     }
@@ -95,7 +102,7 @@ class ListArticles extends XotBaseListRecords
                 ->label('')
                 ->tooltip('Import')
                 ->icon('heroicon-o-folder-open')
-                ->action(static fn (array $data) => app(ImportArticlesFromByJsonTextAction::class)->execute($data['fileContent'])),
+                ->action(static fn (array $data) => app(ImportArticlesFromByJsonTextAction::class)->execute((string) $data['fileContent'])),
         ];
     }
 }

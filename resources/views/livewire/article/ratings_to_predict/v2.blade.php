@@ -34,7 +34,7 @@
         </div>
 
 
-        <x-filament-panels::form
+        <form
                 wire:submit="save"
                 >
 
@@ -79,7 +79,7 @@
                 </x-filament::button>
             @endif
 
-        </x-filament-panels::form>
+        </form>
 
 
 

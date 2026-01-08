@@ -4,15 +4,13 @@
             Place bet
         </div>
 
-        <x-filament-panels::form
+        <form
                 wire:submit="save"
                 >
             Your bet {{ $rating_title }}
             {{ $this->form }}
 
-        {{-- <x-filament-panels::form.actions
-            :actions="$this->getFormActions()"
-        /> --}}
+        {{-- Actions replaced with explicit button --}}
 
 
         <x-filament::button
@@ -23,7 +21,7 @@
         </x-filament::button>
 
 
-        </x-filament-panels::form>
+        </form>
 
 
 

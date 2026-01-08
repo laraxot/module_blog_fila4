@@ -20,6 +20,7 @@ use Modules\Blog\Filament\Resources\BannerResource\Pages\EditBanner;
 use Modules\Blog\Filament\Resources\BannerResource\Pages\ListBanners;
 use Modules\Blog\Models\Banner;
 use Modules\Blog\Models\Category;
+use Modules\Xot\Actions\Cast\SafeArrayCastAction;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class BannerResource extends XotBaseResource
@@ -62,7 +63,12 @@ class BannerResource extends XotBaseResource
                 //     ->required(),
                 Select::make('category_id')
                     ->required()
-                    ->options(Category::getTreeCategoryOptions()),
+                    ->options(function () {
+                        /** @var array<array<string>|string> $options */
+                        $options = SafeArrayCastAction::cast(Category::getTreeCategoryOptions());
+
+                        return $options;
+                    }),
                 // Forms\Components\TextInput::make('link')
                 //     ->columnSpan(1)
                 // ->required(),

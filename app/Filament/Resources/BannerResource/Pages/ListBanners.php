@@ -18,6 +18,7 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Facades\File;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Modules\Blog\Actions\Banner\ImportBannerFromByJsonTextAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListBanners extends XotBaseListRecords
@@ -43,7 +44,7 @@ class ListBanners extends XotBaseListRecords
                 ->label('')
                 ->tooltip('Import')
                 ->icon('heroicon-o-folder-open')
-                ->action(static fn (array $data) => app(ImportBannerFromByJsonTextAction::class)->execute($data['fileContent'])),
+                ->action(static fn (array $data) => app(ImportBannerFromByJsonTextAction::class)->execute(SafeStringCastAction::cast($data['fileContent']))),
         ];
     }
 

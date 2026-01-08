@@ -9,7 +9,7 @@ Le convenzioni per le tabelle nel modulo Blog sono progettate per garantire:
 
 ## Struttura delle Tabelle
 
-### Colonne (`getListTableColumns`)
+### Colonne (`getTableColumns`)
 - Ogni colonna deve avere una chiave stringa
 - Le etichette devono essere gestite tramite il sistema di traduzione
 - Esempio:
