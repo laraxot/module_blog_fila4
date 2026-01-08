@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Actions\Article;
 
-use function Safe\json_encode;
-
-
 use Modules\Blog\Models\Article;
 use Modules\Xot\Actions\GetModelByModelTypeAction;
 use Modules\Xot\Actions\GetModelClassByModelTypeAction;
 
+use function Safe\json_encode;
 use function Safe\json_encode;
 use function Safe\json_encode;
 

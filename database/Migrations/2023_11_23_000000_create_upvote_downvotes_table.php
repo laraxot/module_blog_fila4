@@ -8,8 +8,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Migrazione per la creazione della tabella dei voti (upvote/downvote).
  */
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     /**
      * Esegue la migrazione del database.
      */

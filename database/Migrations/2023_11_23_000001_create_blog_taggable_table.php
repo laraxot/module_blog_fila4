@@ -9,8 +9,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Migrazione per la creazione della tabella pivot dei tag del blog.
  */
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     protected ?string $model_class = Taggable::class;
 
     /**

@@ -8,8 +8,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Migrazione per la creazione della tabella delle visualizzazioni degli articoli.
  */
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     /**
      * Esegue la migrazione del database.
      */
