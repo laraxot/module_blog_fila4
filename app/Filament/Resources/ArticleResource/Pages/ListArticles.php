@@ -4,24 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\ArticleResource\Pages;
 
-use Filament\Actions;
-use Filament\Actions\Action;
-use Filament\Actions\CreateAction;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Textarea;
-use Filament\Tables\Columns\Column;
-use Filament\Tables\Columns\IconColumn;
+use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
-use Illuminate\Support\Facades\File;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
-use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
+use Filament\Actions\CreateAction;
+use Filament\Actions\Action;
+use Filament\Tables\Columns\Column;
+use Filament\Actions;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Resources\Pages\ListRecords;
+use Filament\Tables;
+use Filament\Tables\Enums\ActionsPosition;
+use Filament\Tables\Table;
+use Illuminate\Support\Facades\File;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Modules\Blog\Actions\Article\ImportArticlesFromByJsonTextAction;
 use Modules\Blog\Filament\Resources\ArticleResource;
 use Modules\Blog\Models\Category;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListArticles extends XotBaseListRecords
@@ -61,21 +64,17 @@ class ListArticles extends XotBaseListRecords
         ];
     }
 
-    /**
-     * @return array<string, mixed>
-     */
     public function getTableFilters(): array
     {
-        /** @var array<array<string>|string> $categoryOptions */
-        $categoryOptions = SafeArrayCastAction::cast(Category::getTreeCategoryOptions());
-
         return [
-            'is_featured' => Filter::make('is_featured')->toggle(),
-            'category' => SelectFilter::make('Categoria')
-                ->options($categoryOptions)
+            Filter::make('is_featured')->toggle(),
+            SelectFilter::make('Categoria')
+                ->options(Category::getTreeCategoryOptions())
                 ->attribute('category_id'),
         ];
     }
+
+   
 
     /**
      * Get header actions.
@@ -102,7 +101,7 @@ class ListArticles extends XotBaseListRecords
                 ->label('')
                 ->tooltip('Import')
                 ->icon('heroicon-o-folder-open')
-                ->action(static fn (array $data) => app(ImportArticlesFromByJsonTextAction::class)->execute((string) $data['fileContent'])),
+                ->action(static fn (array $data) => app(ImportArticlesFromByJsonTextAction::class)->execute($data['fileContent'])),
         ];
     }
 }

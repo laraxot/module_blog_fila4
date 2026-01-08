@@ -42,15 +42,13 @@ class ShowArticleCommand extends Command
         $header = ['id', 'title', 'is_winner', 'count', 'sum', 'avg', 'tot'];
         $rows = [];
         foreach ($ratings as $rating) {
-            /** @var Article $tmpArticle */
+            /** @var \Modules\Blog\Models\Article $tmpArticle */
             $tmpArticle = $article->loadSum(['ratings as value_sum' => static function ($query) use ($rating): void {
-                Assert::isInstanceOf($query, \Illuminate\Database\Eloquent\Builder::class);
                 $query
                     ->where('ratings.id', $rating->id)
                     ->where('rating_morph.user_id', '!=', null);
             }], 'rating_morph.value')
                 ->loadSum(['ratings as value_tot' => static function ($query) use ($ratings): void {
-                    Assert::isInstanceOf($query, \Illuminate\Database\Eloquent\Builder::class);
                     $query
                         ->whereIn('ratings.id', $ratings->modelKeys())
                         ->where('rating_morph.user_id', '!=', null);
@@ -63,23 +61,17 @@ class ShowArticleCommand extends Command
             }], 'rating_morph.value')
             */
                 ->loadCount(['ratings as value_count' => static function ($query) use ($rating): void {
-                    Assert::isInstanceOf($query, \Illuminate\Database\Eloquent\Builder::class);
                     $query
                         ->where('ratings.id', $rating->id)
                         ->where('rating_morph.user_id', '!=', null);
                 }], 'rating_morph.value');
 
             // Use getAttribute to safely access dynamic properties
-            $valueSum = $tmpArticle->getAttribute('value_sum');
-            $valueTot = $tmpArticle->getAttribute('value_tot');
-            $valueCount = $tmpArticle->getAttribute('value_count');
-
-            $sum = is_numeric($valueSum) ? (int) $valueSum : 0;
-            $tot = is_numeric($valueTot) ? (int) $valueTot : 0;
-            $count = is_numeric($valueCount) ? (int) $valueCount : 0;
+            $sum = (int) ($tmpArticle->getAttribute('value_sum') ?? 0);
+            $tot = (int) ($tmpArticle->getAttribute('value_tot') ?? 0);
+            $count = (int) ($tmpArticle->getAttribute('value_count') ?? 0);
             $avg = $tot > 0 ? round($sum * 100 / $tot, 2) : 0;
-            /* @phpstan-ignore-next-line property.notFound, property.nonObject */
-            $data = [$rating->id, $rating->title ?? 'N/A', $rating->pivot?->is_winner ?? false,  $count, $sum, $avg, $tot];
+            $data = [$rating->id, $rating->title, $rating->pivot?->is_winner,  $count, $sum, $avg, $tot];
             $rows[] = $data;
         }
         $this->table($header, $rows);

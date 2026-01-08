@@ -8,8 +8,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Migrazione per la creazione della tabella dei voti (upvote/downvote).
  */
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     /**
      * Esegue la migrazione del database.
      */
@@ -30,10 +29,10 @@ return new class extends XotBaseMigration
                 $table->timestamps();
                 $table->softDeletes();
 
-                // $table->unique(['post_id', 'user_id']);
-                // $table->foreignId('post_id'); // ->references('id')->on('posts')->onDelete('cascade');
-                // $table->foreignId('user_id'); // ->references('id')->on('users')->onDelete('cascade');
-                // $table->timestamps();
+                //$table->unique(['post_id', 'user_id']);
+                //$table->foreignId('post_id'); // ->references('id')->on('posts')->onDelete('cascade');
+                //$table->foreignId('user_id'); // ->references('id')->on('users')->onDelete('cascade');
+                //$table->timestamps();
             }
         );
         // -- UPDATE --

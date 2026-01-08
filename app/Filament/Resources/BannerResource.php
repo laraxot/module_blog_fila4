@@ -9,6 +9,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Schema;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
@@ -20,7 +21,6 @@ use Modules\Blog\Filament\Resources\BannerResource\Pages\EditBanner;
 use Modules\Blog\Filament\Resources\BannerResource\Pages\ListBanners;
 use Modules\Blog\Models\Banner;
 use Modules\Blog\Models\Category;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class BannerResource extends XotBaseResource
@@ -63,12 +63,7 @@ class BannerResource extends XotBaseResource
                 //     ->required(),
                 Select::make('category_id')
                     ->required()
-                    ->options(function () {
-                        /** @var array<array<string>|string> $options */
-                        $options = SafeArrayCastAction::cast(Category::getTreeCategoryOptions());
-
-                        return $options;
-                    }),
+                    ->options(Category::getTreeCategoryOptions()),
                 // Forms\Components\TextInput::make('link')
                 //     ->columnSpan(1)
                 // ->required(),

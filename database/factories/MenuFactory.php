@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Blog\Models\Menu;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MenuFactory extends Factory
 {

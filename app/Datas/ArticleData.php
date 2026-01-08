@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Datas;
 
+use Stringable;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Modules\Blog\Actions\Category\GetBloodline;
 use Modules\Blog\Models\Article;
 use Modules\Blog\Models\Category;
 use Spatie\LaravelData\Data;
-use Stringable;
 use Webmozart\Assert\Assert;
 
 class ArticleData extends Data implements \Stringable
@@ -107,7 +107,7 @@ class ArticleData extends Data implements \Stringable
     public function url(string $type): string
     {
         $lang = app()->getLocale();
-        if ($type === 'show') {
+        if ('show' === $type) {
             return '/'.$lang.'/article/'.$this->slug;
         }
 

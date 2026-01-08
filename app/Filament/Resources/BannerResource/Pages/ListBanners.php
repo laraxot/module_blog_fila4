@@ -8,22 +8,24 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\BannerResource\Pages;
 
-use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
+use Filament\Actions\Action;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\Column;
+use Filament\Actions;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
-use Filament\Tables\Columns\Column;
+use Filament\Tables;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
-use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Facades\File;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Modules\Blog\Actions\Banner\ImportBannerFromByJsonTextAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListBanners extends XotBaseListRecords
 {
     // protected static string $resource = BannerResource::class;
+
 
     protected function getHeaderActions(): array
     {
@@ -44,7 +46,7 @@ class ListBanners extends XotBaseListRecords
                 ->label('')
                 ->tooltip('Import')
                 ->icon('heroicon-o-folder-open')
-                ->action(static fn (array $data) => app(ImportBannerFromByJsonTextAction::class)->execute(SafeStringCastAction::cast($data['fileContent']))),
+                ->action(static fn (array $data) => app(ImportBannerFromByJsonTextAction::class)->execute($data['fileContent'])),
         ];
     }
 

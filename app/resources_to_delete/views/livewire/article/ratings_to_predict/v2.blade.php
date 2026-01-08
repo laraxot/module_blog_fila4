@@ -34,7 +34,7 @@
         </div>
 
 
-        <form
+        <x-filament-panels::form
                 wire:submit="save"
                 >
 
@@ -65,7 +65,9 @@
             </x-filament::input.wrapper> --}}
 
 
-            {{-- Actions replaced with explicit buttons --}}
+            {{-- <x-filament-panels::form.actions
+                :actions="$this->getFormActions()"
+            /> --}}
 
             @if(Auth::check())
                 <x-filament::button color="danger" wire:click="save" class="button-big-3 w-100">
@@ -77,7 +79,7 @@
                 </x-filament::button>
             @endif
 
-        </form>
+        </x-filament-panels::form>
 
 
 

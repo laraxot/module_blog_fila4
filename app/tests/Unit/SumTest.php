@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function sum(int|float $a, int|float $b): int|float
+function sum($a, $b): float|int|array
 {
     return $a + $b;
 }

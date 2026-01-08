@@ -8,14 +8,14 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\Concerns\HasPathByParentId;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\SortableTrait;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 /**
  * @property string|null $parent_id
- * @property string $name
+ * @property string      $name
  */
 abstract class BaseTreeModel extends BaseModel
 {

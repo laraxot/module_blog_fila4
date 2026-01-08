@@ -16,8 +16,6 @@ use Filament\Support\Enums\Width;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Modules\Blog\Models\Profile;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\GetViewAction;
 use Webmozart\Assert\Assert;
 
@@ -48,10 +46,7 @@ class Setting extends Component implements HasActions, HasForms
 
         $this->data['name'] = $this->model->user_name;
 
-        /** @var array<string, mixed> $formData */
-        $formData = SafeArrayCastAction::cast($this->data);
-
-        $this->form->fill($formData);
+        $this->form->fill($this->data);
     }
 
     public function render(): View
@@ -147,7 +142,7 @@ class Setting extends Component implements HasActions, HasForms
             ->action(function (array $data): void {
                 Assert::notNull($this->model->user, '['.__LINE__.']['.__FILE__.']');
                 $this->model->user->update([
-                    'password' => bcrypt(SafeStringCastAction::cast($data['password'])),
+                    'password' => bcrypt($data['password']),
                 ]);
             });
     }

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\ArticleResource\Pages;
 
-use Filament\Actions;
-use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
+use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;
+use Filament\Schemas\Schema;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
+use Filament\Actions;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Resources\Pages\EditRecord;
 use Filament\Resources\Pages\ViewRecord;
-use Filament\Schemas\Schema;
-use Webmozart\Assert\Assert;
-use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
-use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;
 use Modules\Blog\Actions\Article\TranslateContentAction;
 use Modules\Blog\Filament\Resources\ArticleResource;
 use Modules\Blog\Models\Article;
@@ -33,7 +33,7 @@ class ViewArticle extends ViewRecord
     public function infolist(Schema $schema): Schema
     {
         return $schema
-            ->components([
+            ->schema([
                 // ...
                 TextEntry::make('title'),
                 TextEntry::make('closed_at'),
@@ -58,10 +58,7 @@ class ViewArticle extends ViewRecord
                         ->native(false),
                 ])
                 ->action(function (array $data, $record): void {
-                    Assert::notNull($record, 'Record cannot be null');
-                    if (is_object($record) && method_exists($record, 'update')) {
-                        $record->update($data);
-                    }
+                    $record->update($data);
                 }),
             /*
             Actions\Action::make('translate')

@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\ArticleResource\Pages;
 
-use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
-use Filament\Forms\Components\Checkbox;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
+use Filament\Actions;
+use Filament\Forms\Components\Checkbox;
 use Modules\Blog\Actions\Article\TranslateContentAction;
 use Modules\Blog\Filament\Resources\ArticleResource;
 use Modules\Blog\Models\Article;
 use Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
-use Webmozart\Assert\Assert;
 
 class EditArticle extends LangBaseEditRecord
 {
@@ -36,17 +35,11 @@ class EditArticle extends LangBaseEditRecord
                     Checkbox::make('footer_blocks')->inline(),
                 ])
                 ->action(function (Article $record, ArticleResource $article_resource, array $data): void {
-                    $locales = $article_resource->getTranslatableLocales();
-                    Assert::isArray($locales, 'getTranslatableLocales must return array');
-
-                    /** @var array<string, mixed> $safeData */
-                    $safeData = SafeArrayCastAction::cast($data);
-
                     app(TranslateContentAction::class)->execute(
                         'article',
                         $record->id,
-                        array_values(array_map(fn ($locale) => (string) $locale, $locales)),
-                        $safeData,
+                        array_values($article_resource->getTranslatableLocales()),
+                        $data,
                         Article::class
                     );
                 }),

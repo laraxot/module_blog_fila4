@@ -8,7 +8,7 @@
           <div class="bioform wow fadeInDown">
             <h4>Account</h4>
             {{-- <form> --}}
-            <form
+            <x-filament-panels::form
               wire:submit="save"
               >
               <div class="flex flex-wrap  gape mt30">
@@ -87,7 +87,7 @@
                 </div>
               </div>
             {{-- </form> --}}
-            </form>
+            </x-filament-panels::form>
           </div>
         </div>
 

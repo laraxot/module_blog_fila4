@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources;
 
-use Filament\Resources\Pages\PageRegistration;
 use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
-use Modules\Blog\Filament\Resources\ProfileResource\Pages;
+use Modules\Blog\Filament\Resources\ProfileResource\RelationManagers\RatingMorphsRelationManager;
+use Modules\Blog\Filament\Resources\ProfileResource\Pages\ListProfiles;
 use Modules\Blog\Filament\Resources\ProfileResource\Pages\CreateProfile;
 use Modules\Blog\Filament\Resources\ProfileResource\Pages\EditProfile;
-use Modules\Blog\Filament\Resources\ProfileResource\Pages\ListProfiles;
 use Modules\Blog\Filament\Resources\ProfileResource\Pages\ViewProfile;
-use Modules\Blog\Filament\Resources\ProfileResource\RelationManagers\RatingMorphsRelationManager;
+use Filament\Resources\Pages\PageRegistration;
+use Modules\Blog\Filament\Resources\ProfileResource\Pages;
+use Modules\Blog\Filament\Resources\ProfileResource\RelationManagers;
 use Modules\Blog\Models\Profile;
 use Modules\User\Filament\Resources\BaseProfileResource;
 

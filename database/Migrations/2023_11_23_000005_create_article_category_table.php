@@ -8,8 +8,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Migrazione per la creazione della tabella pivot tra articoli e categorie.
  */
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     /**
      * Esegue la migrazione del database.
      */
@@ -27,7 +26,7 @@ return new class extends XotBaseMigration
                 $table->integer('order')->default(0);
                 $table->boolean('is_primary')->default(false);
                 $table->timestamps();
-
+                
                 $table->unique(['category_id', 'article_id']);
                 $table->index(['category_id', 'order']);
             }
