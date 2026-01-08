@@ -55,6 +55,16 @@ Il modulo segue la struttura modulare standard di Laravel:
 - Supporto per contenuti multilingua
 - Integrazione con Filament per l'amministrazione
 
+## Modelli Disabilitati
+Alcuni modelli sono stati disabilitati perché non necessari per questo progetto:
+
+### Transaction (Disabilitato: 2025-10-15)
+Sistema di gestione crediti/transazioni utente. File mantenuti per riferimento storico:
+- `app/Models/Transaction.php.old`
+- `database/factories/TransactionFactory.php.disabled`
+
+**Documentazione**: [Transaction Removal](./models/transaction-removal.md)
+
 ## Conflitti Risolti
 
 ### module.json (2025-05-13)
