@@ -8,15 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Blog\Models\Banner;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<Banner>
-=======
-<<<<<<< HEAD
- * @extends Factory<Banner>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Banner>
->>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
 class BannerFactory extends Factory
 {

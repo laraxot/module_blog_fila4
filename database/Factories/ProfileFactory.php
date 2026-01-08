@@ -9,11 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\Profile;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<Profile>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\Profile>
->>>>>>> origin/develop
  */
 class ProfileFactory extends Factory
 {

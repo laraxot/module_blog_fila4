@@ -9,15 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\TextWidget;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<TextWidget>
-=======
-<<<<<<< HEAD
- * @extends Factory<TextWidget>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Blog\Models\TextWidget>
->>>>>>> origin/develop
->>>>>>> 336b9b7 (.)
  */
 class TextWidgetFactory extends Factory
 {
