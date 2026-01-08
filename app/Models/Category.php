@@ -183,7 +183,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Category whereSortOrder($value)
  *
  * @mixin \Eloquent
- */
+  * */
 class Category extends BaseModel
 {
     use HasRecursiveRelationships;

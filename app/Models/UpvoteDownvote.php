@@ -62,7 +62,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static int                             count(string $columns = '*')
  *
  * @mixin \Eloquent
- */
+  * */
 class UpvoteDownvote extends BaseModel
 {
     protected $fillable = ['is_upvote', 'post_id', 'user_id'];

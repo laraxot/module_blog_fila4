@@ -64,7 +64,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static int                       count(string $columns = '*')
  *
  * @mixin \Eloquent
- */
+  * */
 class PostView extends BaseModel
 {
     protected $fillable = [

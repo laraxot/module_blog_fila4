@@ -95,7 +95,7 @@ use Spatie\Translatable\HasTranslations;
  * @method static int                     count(string $columns = '*')
  *
  * @mixin \Eloquent
- */
+  * */
 class Banner extends BaseModel implements HasMedia
 {
     use InteractsWithMedia;

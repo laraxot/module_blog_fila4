@@ -222,7 +222,7 @@ use Webmozart\Assert\Assert;
  * @method static int                                                   count(string $columns = '*')
  *
  * @mixin \Eloquent
- */
+ * */
 class Article extends BaseModel implements Feedable, HasRatingContract, HasTranslationsContract
 {
     use HasChildren;
