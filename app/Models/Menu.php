@@ -115,7 +115,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static int                                                 count(string $columns = '*')
  *
  * @mixin \Eloquent
-  * */
+ * */
 class Menu extends BaseModel implements HasMedia
 {
     use HasRecursiveRelationships;

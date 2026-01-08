@@ -9,7 +9,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Schema;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;

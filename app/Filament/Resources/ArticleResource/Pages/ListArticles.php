@@ -4,23 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\ArticleResource\Pages;
 
-use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Filters\Filter;
-use Filament\Tables\Filters\SelectFilter;
-use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
-use Filament\Actions\CreateAction;
-use Filament\Actions\Action;
-use Filament\Tables\Columns\Column;
 use Filament\Actions;
+use Filament\Actions\Action;
+use Filament\Actions\CreateAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
-use Filament\Resources\Pages\ListRecords;
-use Filament\Tables;
-use Filament\Tables\Enums\ActionsPosition;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Support\Facades\File;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
+use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Modules\Blog\Actions\Article\ImportArticlesFromByJsonTextAction;
 use Modules\Blog\Filament\Resources\ArticleResource;
@@ -73,8 +69,6 @@ class ListArticles extends XotBaseListRecords
                 ->attribute('category_id'),
         ];
     }
-
-   
 
     /**
      * Get header actions.

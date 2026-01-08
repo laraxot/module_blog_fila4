@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\ArticleResource\Pages;
 
-use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\Action;
-use Filament\Actions;
+use Filament\Actions\DeleteAction;
 use Filament\Forms\Components\Checkbox;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Modules\Blog\Actions\Article\TranslateContentAction;
 use Modules\Blog\Filament\Resources\ArticleResource;
 use Modules\Blog\Models\Article;

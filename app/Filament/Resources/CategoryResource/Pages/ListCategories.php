@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\CategoryResource\Pages;
 
-use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\TextColumn;
-use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
-use Filament\Actions\CreateAction;
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Actions\CreateAction;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
+use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListCategories extends XotBaseListRecords
@@ -54,9 +53,6 @@ class ListCategories extends XotBaseListRecords
     //         ]);
     // }
 
-    /**
-     
-     */
     protected function getHeaderActions(): array
     {
         return [

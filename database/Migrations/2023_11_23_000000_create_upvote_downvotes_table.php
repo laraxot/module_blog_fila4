@@ -29,10 +29,10 @@ return new class extends XotBaseMigration {
                 $table->timestamps();
                 $table->softDeletes();
 
-                //$table->unique(['post_id', 'user_id']);
-                //$table->foreignId('post_id'); // ->references('id')->on('posts')->onDelete('cascade');
-                //$table->foreignId('user_id'); // ->references('id')->on('users')->onDelete('cascade');
-                //$table->timestamps();
+                // $table->unique(['post_id', 'user_id']);
+                // $table->foreignId('post_id'); // ->references('id')->on('posts')->onDelete('cascade');
+                // $table->foreignId('user_id'); // ->references('id')->on('users')->onDelete('cascade');
+                // $table->timestamps();
             }
         );
         // -- UPDATE --

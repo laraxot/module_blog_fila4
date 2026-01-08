@@ -13,7 +13,6 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Component;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;

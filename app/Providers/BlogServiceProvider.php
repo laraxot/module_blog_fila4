@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Providers;
 
-use Illuminate\Routing\Router;
-use Modules\Blog\Projectors;
-use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotBaseServiceProvider;
-use Spatie\EventSourcing\Facades\Projectionist;
 
 class BlogServiceProvider extends XotBaseServiceProvider
 {
@@ -23,11 +19,8 @@ class BlogServiceProvider extends XotBaseServiceProvider
         parent::boot();
     }
 
-
     public function register(): void
     {
         parent::register();
     }
-
-
 }

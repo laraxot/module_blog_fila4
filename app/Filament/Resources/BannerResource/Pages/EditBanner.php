@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Blog\Filament\Resources\BannerResource\Pages;
 
 use Filament\Actions\DeleteAction;
-use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Blog\Filament\Resources\BannerResource;
 

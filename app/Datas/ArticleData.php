@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Datas;
 
-use Stringable;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Modules\Blog\Actions\Category\GetBloodline;

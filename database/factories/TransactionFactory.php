@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Database\Factories;
 
-use Modules\Blog\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Blog\Models\Transaction;
 
 /**
  * @extends Factory<Transaction>

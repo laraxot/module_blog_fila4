@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Blog\Filament\Resources\TextWidgetResource\Pages;
 
 use Filament\Actions\EditAction;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\ViewRecord;
 use Modules\Blog\Filament\Resources\TextWidgetResource;
 

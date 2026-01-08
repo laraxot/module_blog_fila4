@@ -73,7 +73,7 @@ use Webmozart\Assert\Assert;
  * @method static int                         count(string $columns = '*')
  *
  * @mixin \Eloquent
-  * */
+ * */
 class TextWidget extends BaseModel implements HasMedia
 {
     use InteractsWithMedia;

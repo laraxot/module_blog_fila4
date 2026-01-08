@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 use Modules\Blog\Models\Article;
 
 use function Safe\json_decode;
-use function Safe\preg_replace;
 
 /**
  * @extends Factory<Article>

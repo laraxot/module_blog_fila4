@@ -31,7 +31,7 @@ return new class extends XotBaseMigration {
                 $table->timestamp('viewed_at');
                 $table->timestamps();
                 $table->softDeletes();
-                
+
                 $table->index(['post_id', 'ip_address', 'user_agent']);
                 $table->index(['post_id', 'user_id']);
                 $table->index('viewed_at');

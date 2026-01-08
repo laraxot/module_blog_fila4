@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Models;
 
-use Modules\Blog\Models\Concerns\HasPathByParentId;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Models\Concerns\HasPathByParentId;
 use Spatie\EloquentSortable\SortableTrait;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 

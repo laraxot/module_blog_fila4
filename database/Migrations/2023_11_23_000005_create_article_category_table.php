@@ -26,7 +26,7 @@ return new class extends XotBaseMigration {
                 $table->integer('order')->default(0);
                 $table->boolean('is_primary')->default(false);
                 $table->timestamps();
-                
+
                 $table->unique(['category_id', 'article_id']);
                 $table->index(['category_id', 'order']);
             }

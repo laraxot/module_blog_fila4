@@ -45,7 +45,7 @@ return new class extends XotBaseMigration {
                 $table->schemalessAttributes('extra');
                 $table->timestamps();
                 $table->softDeletes();
-                
+
                 $table->index(['first_name', 'last_name']);
                 $table->index('email');
                 $table->index('credits');

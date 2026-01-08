@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Blog\Filament\Resources\CategoryResource\Pages;
 
 use Filament\Actions\CreateAction;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\ManageRecords;
 use Modules\Blog\Filament\Resources\CategoryResource;
 

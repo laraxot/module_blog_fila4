@@ -22,24 +22,24 @@ class ArticleSidebar
         return Builder::make($name)
             ->blocks([
                 Title::make(
-    name: 'title'
-),
+                    name: 'title'
+                ),
                 Paragraph::make(
-    name: 'paragraph'
-),
+                    name: 'paragraph'
+                ),
                 // Image::make(context: $context),
                 ImageSpatie::make(
-    name: 'image_spatie'
-),
+                    name: 'image_spatie'
+                ),
                 ImagesGallery::make(
-    name: 'images_gallery'
-),
+                    name: 'images_gallery'
+                ),
                 Rating::make(
-    name: 'rating'
-),
+                    name: 'rating'
+                ),
                 Chart::make(
-    name: 'chart'
-),
+                    name: 'chart'
+                ),
             ])
             ->collapsible();
     }

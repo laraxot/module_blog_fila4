@@ -42,7 +42,7 @@ class ShowArticleCommand extends Command
         $header = ['id', 'title', 'is_winner', 'count', 'sum', 'avg', 'tot'];
         $rows = [];
         foreach ($ratings as $rating) {
-            /** @var \Modules\Blog\Models\Article $tmpArticle */
+            /** @var Article $tmpArticle */
             $tmpArticle = $article->loadSum(['ratings as value_sum' => static function ($query) use ($rating): void {
                 $query
                     ->where('ratings.id', $rating->id)

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Providers\Filament;
 
-use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Filament\Panel;
+use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 use Pboivin\FilamentPeek\FilamentPeekPlugin;
 

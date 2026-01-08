@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Resources\CategoryResource\Pages;
 
-use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Filament\Actions\DeleteAction;
-use Filament\Actions;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Modules\Blog\Filament\Resources\CategoryResource;
 use Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord;
 
